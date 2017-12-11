@@ -1,0 +1,24 @@
+<!-- TEAM -->
+{{? it.anchor}}<a name="{{= it.anchor}}"></a>{{?}}
+<div class="ds-row team {{? it.bg_color}}ds-bg-{{= it.bg_color}}{{?}} ds-padding-top-2 ds-padding-bottom-3">
+	<div class="ds-col-10 ds-offset-1">
+		<div class="ds-row">
+			<div class="ds-col-12"><h2 class="ds-heading-2 ds-padding-bottom-2 ds-align-text-center {{? it.font_color}}ds-bg-{{= it.font_color}}{{?}}">{{= it.heading}}</h2></div>
+			{{~ it.members: member}}
+			<div class="ds-col-4 ds-padding-bottom-2">
+				<div class="scip-clip-circle">
+					<img src="{{= member.image}}" />
+				</div>
+				<a href="{{= member.link}}" target="_blank" class="ds-padding-top-1 ds-align-text-center ds-display-xs-block"><h4 class="ds-heading-4 ds-margin-bottom-0 ds-text-contextual-blue-5">{{= member.name}}</h4></a>
+				{{? it.line_color}}
+				<div class="ds-row ds-padding-top-2">
+					<div class="ds-offset-5 ds-col-2 ds-border-bottom-{{= it.line_color}}"></div>
+				</div>
+				{{?}}
+			</div>
+			{{~}}
+		</div>
+		
+	</div>
+</div>
+<!-- TEAM -->

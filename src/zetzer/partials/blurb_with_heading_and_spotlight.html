@@ -1,0 +1,28 @@
+<!-- BLURB W HEADING BUTTON AND SPOTLIGHT -->
+<div class="ds-row ds-padding-top-3 {{? it.padding_bottom}}ds-padding-bottom-3{{?}}">
+	<div class="ds-col-xs-10 ds-offset-xs-1 ds-col-md-4 ds-offset-md-1">
+		{{? it.title}}
+		<h2 class="ds-heading-2">{{= it.title}}</h2>
+		{{?}}
+		{{~ it.blurbs : blurb}}
+		<p>{{= blurb}}</p>
+		{{~}}
+		{{? it.button}}
+		<a class="is_button_wrapper" {{? it.button.open_in_new_window}}target="_blank"{{?}} href="{{? it.button.mail_to}}mailto:{{?}}{{= it.button.link}}">
+			<button href="{{? it.button.mail_to}}mailto:{{?}}{{= it.button.link}}" class="ds-button ds-small ds-width-auto {{? it.button.transparent}}ds-secondary{{??}}ds-primary	{{?}}">{{= it.button.cta}}</button>
+		</a>
+		{{?}}
+	</div>
+
+	<div class="ds-padding-top-xs-3 ds-padding-top-md-0 ds-col-xs-10 ds-offset-xs-1 ds-col-md-4 ds-offset-md-1">
+	{{? it.quote || it.attribute || it.bg_color}}
+		<div class="circle-highlight-container">
+			<div class="circle-highlight {{? it.bg_color}}ds-bg-{{= it.bg_color}}{{?}}">
+				<h3 class="ds-heading-3 ds-align-text-center ds-padding-left-1 ds-padding-right-1 {{? it.font_color}}ds-text-{{= it.font_color}}{{?}}"><span>"</span>{{= it.quote}}<span>"</span></h3>
+				{{? it.attribute}}<p class="ds-align-text-center ds-padding-left-1 ds-padding-right-1 {{? it.font_color}}ds-text-{{= it.font_color}}{{?}}">{{= it.attribute}}</p>{{?}}
+			</div>
+		</div>
+	{{?}}
+	</div>
+</div>
+<!-- BLURB W HEADING BUTTON AND SPOTLIGHT -->

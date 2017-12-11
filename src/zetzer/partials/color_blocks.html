@@ -1,0 +1,19 @@
+<!-- BLURB -->
+<div class="ds-row ds-margin-top-3 {{? it.bg_color}}ds-bg-{{= it.bg_color}}{{?}}">
+	<div class="ds-offset-1 ds-col-10">
+		<div class="ds-row">
+			{{~ it.blocks : block}}
+			<div class="{{? it.set_height_group_name}}ds-set-height-{{= it.set_height_group_name}}{{?}}  {{? block.bg_color}}ds-bg-{{= block.bg_color}}{{?}} ds-col-4">
+				{{? block.blurb}}
+				<h1 class="ds-heading-xs-1 ds-heading-md-2 ds-heading-lg-1 ds-padding-top-3 ds-margin-top-3 ds-padding-left-2 {{? block.font_color}}ds-text-{{= block.font_color}}{{?}}">{{= block.heading}}</h1>
+				<p class="ds-padding-bottom-3 ds-margin-bottom-3 ds-padding-left-2 {{? block.font_color}}ds-text-{{= block.font_color}}{{?}}">{{= block.blurb}}</p>
+				{{??}}
+				<div class="ds-padding-top-3"></div>
+				<h2 class="ds-heading-2 ds-padding-top-3 ds-margin-top-3 ds-padding-left-2 ds-padding-bottom-2 {{? block.font_color}}ds-text-{{= block.font_color}}{{?}}">{{= block.heading}}</h2>
+				{{?}}
+			</div>
+			{{~}}
+		</div>
+	</div>
+</div>
+<!-- BLURB -->

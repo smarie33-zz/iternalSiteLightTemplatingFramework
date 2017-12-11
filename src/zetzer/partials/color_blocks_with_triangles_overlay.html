@@ -1,0 +1,42 @@
+<!-- COLORED BLOCKS WITH TRIANGLES OVERLAY -->
+{{var blockGroupOverlayIndex = 0;}}
+{{~ it.block_groups: block_group}}
+	{{blockGroupOverlayIndex += 1;}}
+	{{~ block_group.blocks : block : index}}
+		{{? block.overlay}}
+		<div class="ds-overlay" data-close-button="false" id="color_blocks_with_triangles_{{= blockGroupOverlayIndex}}-{{= index}}" aria-hidden="false" role="dialog">
+		  <div class="ds-shadow-floating ds-overlay-box ds-col-xs-10 ds-offset-xs-1 ds-col-md-8 ds-offset-md-2 ds-col-lg-6 ds-offset-lg-3 ds-align-text-left" role="document" >
+		  	<button class="ds-close ds-button ds-flat ds-margin-1 ds-padding-1">
+			    <span class="ds-icon-x {{? block.font_color}}ds-text-{{= block.font_color}}{{??}}ds-text-neutral-8{{?}}"></span>
+			</button>
+		    <div class="ds-row ds-overlay-content ds-bg-{{= block.bg_color}} {{? block.font_color}}ds-text-{{= block.font_color}}{{?}}" style="margin-bottom: 0;">
+		      <div class="ds-offset-xs-1 ds-col-xs-10">
+		        <h2 class="ds-heading-2 ds-align-text-center {{? block.font_color}}ds-text-{{= block.font_color}}{{?}}">{{= block.overlay.heading}}</h2>
+		        <p class="{{? block.font_color}}ds-text-{{= block.font_color}}{{?}}">{{= block.overlay.blurb}}</p>
+		        <div class="ds-row">
+		        	<div class="ds-col-md-6">
+				      	<p class="ds-font-weight-bold {{? block.font_color}}ds-text-{{= block.font_color}}{{?}}">Projects</p>
+				      	{{~ block.overlay.projects : project}}
+				      		<p class="{{? block.font_color}}ds-text-{{= block.font_color}}{{?}}">{{= project}}</p>
+				      	{{~}}
+				    </div>
+			        <div class="ds-col-md-6">
+			      		<p class="ds-font-weight-bold {{? block.font_color}}ds-text-{{= block.font_color}}{{?}}">Clients</p>
+			      		{{~ block.overlay.clients :client}}
+				      		<p class="{{? block.font_color}}ds-text-{{= block.font_color}}{{?}}">{{= client}}</p>
+				      	{{~}}
+			      	</div>
+		        </div>
+		      </div>
+		      <div class="ds-col-xs-12 ds-offset-md-4 ds-col-md-4 ds-padding-top-2 ds-align-text-center">
+		        <a class="is_button_wrapper" href="{{= block.overlay.case_study_link}}">
+					<button href="{{= block.overlay.case_study_link}}" class="is_center_button ds-button {{? block.font_color}}ds-border-{{= block.font_color}}{{??}}ds-border-neutral-8{{?}} {{? block.font_color}}ds-text-{{= block.font_color}}{{??}}ds-text-neutral-8{{?}} ds-secondary">Case Studies</button>
+				</a>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		{{?}}
+	{{~}}
+{{~}}
+<!-- COLORED BLOCKS WITH TRIANGLES OVERLAY -->

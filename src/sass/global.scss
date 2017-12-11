@@ -1,0 +1,122 @@
+
+button{
+	text-transform: none !important;
+}
+
+.ds-input-label, .ds-input-checkbox {
+	text-transform: capitalize !important;
+}
+
+p.ds-text-small .ds-icon-play,
+.ds-icon-reset {
+	font-size: 15.5px;
+	display: block;
+	float: left;
+}
+
+.ds-icon-reset {
+	padding-top: 3px;
+}
+
+p.ds-text-small a {
+	border-bottom: 1px solid #ffffff;
+	display: inline-block;
+	&:hover {
+		text-decoration: none !important;
+		border-bottom: 1px solid #00598a;
+	}
+}
+
+p.ds-text-small:hover {
+	text-decoration: none !important;
+}
+
+a.is_button_wrapper{
+	&:hover{
+		text-decoration: none !important;
+	}
+}
+
+a.is_clear_form {
+	border-bottom: 1px solid #ffffff;
+	display: inline-block;
+	&:hover {
+		text-decoration: none !important;
+		border-bottom: 1px solid #00598a;
+	}
+}
+
+.is_text_to_capitalize {
+	text-transform: capitalize;
+}
+
+.is_center_button {
+	display: block;
+	margin: auto;
+}
+
+.stick {
+  position: fixed;
+  top: 0;
+  margin: 0;
+  z-index: 1000; 
+}
+
+.is_table_columns{
+	&.table_columns_stick{
+		padding-top: 103px;
+	}
+}
+
+.hide_border{
+	li{
+		border: none !important;
+		.ds-row{
+			border: none !important;	
+		}
+	}
+}
+
+.is_list{
+	ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		li {
+			padding-left: 0;
+			clear: both;
+			&:before{
+		  		content: "• ";
+		  		font-size: 48px;
+		  		line-height: .6em;
+ 				color: #d8d8d8;
+ 				display: block;
+ 				float:left;
+ 				height: 100%;
+			}
+			span{
+				padding-left: 24px;
+    			display: block;
+			}
+		}
+	}
+}
+
+// Debug utility that makes grey boxes behind all blocks, for layout debugging
+// @include debug;
+
+
+// Fix Sticky Footer Overflow
+footer { overflow-x: hidden; }
+
+
+// Gradient Overlay
+.gradient-overlay:before {
+	content: '';
+	height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.8) 0%, transparent 54%);
+}

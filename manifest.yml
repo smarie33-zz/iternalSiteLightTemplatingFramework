@@ -1,0 +1,8 @@
+applications:
+  - buildpack: staticfile_buildpack
+    path: build
+    memory: 256M
+    instances: 1
+    domain: w3ibm.mybluemix.net
+    name: scip
+    disk_quota: 1024M

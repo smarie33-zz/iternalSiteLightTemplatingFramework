@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+	<meta charset="utf-8">
+	<title>{{= it.document.title }}</title>
+ 	{{var sitepath = "/"; }}
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+	<link href="{{= sitepath}}w3ds-code/w3ds.css" rel="stylesheet">
+	<link href="{{= sitepath}}w3ds-code/w3ds-data-tables.css" rel="stylesheet">
+	<link href="{{= sitepath}}w3ds-code/w3ds-prism.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://w3.ibm.com/w3-masthead/plugins/w3-masthead/w3-masthead.css" type="text/css">
+	<link href="{{= sitepath}}css/style.css" rel="stylesheet">
+	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+	<meta name="theme-color" content="#ffffff">
+	<!-- Favicon-type Stuff --> 
+
+</head>
+
+<body>
+<!-- all overlays must be a direct child of the body. only overlays are from the color block triangles -->
+	{{~ it.document.modules :module }}
+		{{? module.name == "color_blocks_with_triangles"}}
+			{{=it.include("color_blocks_with_triangles_overlay.html", module.data)}}
+		{{?}}
+	{{~}}
+	
+	<div class="ds-grid">
+		
+		<a href="https://w3.ibm.com/" id="ds-w3-injectable-nav" data-badgecolor="3" data-fontcolor="1" data-badgeheight="79" target="_blank">w3</a>
+		
+		{{= it.include("header.html", {sitepath : sitepath}) }}
+		<div class="ds-padding-top-3">
+			{{~ it.document.modules :module }}
+				{{=it.include(module.name+".html", module.data)}}
+			{{~}}		
+
+			{{= it.document }}
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="{{= sitepath}}w3ds-code/w3ds.js"></script>
+	<script type="text/javascript" src="https://w3.ibm.com/w3-masthead/plugins/w3-masthead/w3-masthead.js"></script>
+	<script type="text/javascript" src="{{= sitepath}}js/ibmStudio_pub.min.js"></script>
+
+</body>
+</html>

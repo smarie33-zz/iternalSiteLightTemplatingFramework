@@ -1,0 +1,152 @@
+<!-- FILTER -->
+{{ var allStudios = 0; }}
+{{ for(var prop in it.studio_locations) { }}
+	{{ allStudios++; }}
+{{ } }}
+
+<div class="ds-row is_table_columns ds-padding-right-1-top-2 ds-bg-neutral-4">
+	<div class="ds-col-xs-10 ds-push-xs-1 ds-margin-top-2 ds-bg-neutral-1">
+		<ul class="ds-accordion is_filter_accordion ds-margin-top-0 ds-margin-bottom-0">
+		    <li class="ds-row ds-border-bottom-neutral-1">
+		        <div class="ds-accordion-control" aria-controls="ds-accordion-slidedown" aria-expanded="false">
+		            <div class="ds-accordion-title">Filter</div>
+		            <div class="ds-accordion-slidedown ds-padding-left-1 ds-padding-right-1 ds-padding-bottom-0 ds-bg-neutral-1">
+		                <div class="ds-col-md-4 ds-col-lg-6">
+							<div class="ds-padding-bottom-1">Location</div>
+							<div class="ds-row">
+								{{ for(var iot in it.iot_place) { }}
+								<div class="ds-col-md-12 ds-col-lg-6">
+									<div class="ds-input-container ds-padding-bottom-0 ds-margin-bottom-0">
+									    <label class="ds-input-label ds-padding-right-0 ds-padding-left-0 ds-padding-bottom-0">
+										    <div class="ds-input-checkbox-group">
+										      <label for="chekcbox_locations_{{= iot}}" class="ds-input-checkbox is_location">
+										        <input type="checkbox" name="chekcbox_locations" id="chekcbox_locations_{{= iot}}" class="ds-input " value="{{= iot}}">
+										        <div class="ds-input-control ds-border-blue-2"></div>
+										        <span class="ds-text-small">{{= it.iot_place[iot] }}</span>
+										      </label>
+										    </div>
+										</label>
+									</div>
+								</div>
+								{{ } }}
+							</div>
+						</div>
+						<div class="ds-col-md-4 ds-col-lg-3">
+							<div class="ds-padding-bottom-1">Offering Availability</div>
+							{{ for(var chck in it.offerings) { }}
+							 <div class="ds-input-container ds-padding-bottom-0 ds-margin-bottom-0">
+							    <label class="ds-input-label ds-padding-right-0 ds-padding-left-0 ds-padding-bottom-0">
+								    <div class="ds-input-checkbox-group">
+								      <label for="chekcbox_offerings_{{= chck}}" class="ds-input-checkbox is_offering">
+								        <input type="checkbox" name="chekcbox_offerings" id="chekcbox_offerings_{{= chck}}" class="ds-input" value="{{= chck}}">
+								        <div class="ds-input-control ds-border-blue-2"></div>
+								        <span class="ds-text-small">{{= it.offerings[chck] }}</span>
+								      </label>
+								    </div>
+								</label>
+							</div>
+					        {{ } }}
+						</div>
+						<div class="ds-col-md-3 ds-col-lg-2">
+							<div class="ds-padding-bottom-1">Capacity</div>
+							<div class="ds-input-radio-group">
+								{{ for(var cap in it.attendee_qty) { }}
+									{{? cap != 5}}
+								    <label for="radio{{= cap}}" class="ds-input-radio is_capacity">
+								      <input type="radio" name="radio-capacity" id="radio{{= cap}}" class="ds-input" value="{{= cap}}">
+								      <div class="ds-input-control ds-border-blue-2"></div>
+								      <span class="ds-text-small">{{= it.attendee_qty[cap]}}</span>
+								    </label>
+								    {{?}}
+							    {{ } }}
+							</div>
+						</div>
+						<div class="ds-col-6 ds-push-5 ds-padding-top-1 ds-padding-bottom-1">
+							<a class="is_clear_form" href="#"><span class="ds-icon-size-default ds-icon-reset ds-text-blue-6 ds-padding-right-0_5"></span><span class="ds-text-blue-6">Clear All</span></a>
+						</div>
+		            </div>
+		        </div>
+		    </li>
+		</ul>
+	</div>
+</div>
+<!-- FILTER -->
+
+<!-- SORTING TABLE -->
+<div class="ds-row is_column_title_row ds-padding-top-1 ds-padding-bottom-3 ds-bg-neutral-4">
+	<!-- COLUMN TITLES -->
+	<div class="is_column_title ds-hide-xs ds-display-lg-block ds-col-xs-10 ds-push-xs-1 ds-padding-top-0_5 ds-padding-left-lg-1_5 ds-padding-right-lg-1_5 ds-padding-bottom-1 ds-bg-neutral-2 ds-border-bottom-neutral-4">
+		<div class="ds-row">
+			<div class="ds-hide-md ds-display-lg-inline-block ds-col-2 ds-text-small ds-font-weight-bold">City, Location</div>
+			<div class="ds-col-md-3 ds-col-lg-3 ds-text-small ds-font-weight-bold">Address</div>
+			<div class="ds-col-md-8 ds-col-lg-4 ds-text-small ds-font-weight-bold">Offering Availability</div>
+			<div class="ds-col-lg-2 ds-hide-md ds-display-lg-inline-block ds-push-lg-1 ds-text-small ds-font-weight-bold">Capacity</div>
+			<div class="ds-col-md-1 ds-hide-lg ds-text-small ds-font-weight-bold">Cap</div>
+		</div>
+		<div class="ds-row">
+			{{ for(var offer in it.offerings) { }}
+	        	<div class="ds-col-md-2 ds-push-md-3 ds-col-lg-1 ds-push-lg-5"><a class="ds-text-small" target="_blank" href="{{= it.offering_links[offer]}}">{{= it.offerings[offer] }}</a></div>
+	        {{ } }}
+		</div>
+	</div>
+	<!-- COLUMN TITLES -->
+	<div class="is_column_table ds-col-xs-10 ds-push-xs-1">
+	    {{ var i = 1; }}
+		{{ for(var prop in it.studio_locations) { }}
+		<ul class="ds-accordion is_table_row ds-margin-top-0 ds-margin-bottom-0 ds-margin-bottom-xs-0_5 ds-margin-bottom-lg-0" data-iot="{{= it.studio_locations[prop].iot}}" data-attendee="{{= it.studio_locations[prop].attendee_qty}}" data-offerings="{{= it.studio_locations[prop].offerings}}">
+		    <li class="ds-row ds-border-bottom-neutral-1 ds-bg-neutral-1">
+		        <div class="ds-accordion-control ds-open" aria-controls="ds-accordion-slidedown" aria-expanded="false">
+		            <div class="ds-accordion-title ds-hide-lg">{{= it.studio_locations[prop].studio_name }}</div>
+		            <div class="ds-accordion-slidedown ds-padding-left-1 ds-padding-right-1 ds-padding-bottom-0 ds-padding-top-xs-0 ds-bg-neutral-1">
+					    <div class="ds-row ds-padding-top-1 {{? it.studio_locations[prop].video }}ds-padding-bottom-0_5{{??}}ds-padding-bottom-2{{?}} {{? i < allStudios}}ds-border-bottom-lg-neutral-4{{?}}">
+					    	<div class="ds-col-2 ds-hide-xs ds-display-lg-inline-block">
+					    		<p class="ds-text-small">{{= it.studio_locations[prop].studio_name }}</p>
+					    		{{? it.studio_locations[prop].video }}
+					    		<p class="ds-text-small ds-padding-top-1"> <a href="{{= it.studio_locations[prop].video }}" target="_blank"><span class="ds-icon-size-default ds-icon-play ds-text-blue-6 ds-padding-right-0_5"></span><span>Digital Tour</span></a></p>
+					    		{{?}}
+					    	</div>
+					        <div class="ds-col-xs-12 ds-col-lg-3 ds-padding-right-md-0 ds-padding-right-lg-0_5">
+					        	<p class="ds-text-small">{{= it.studio_locations[prop].studio_address }}</p>
+					        	{{? it.studio_locations[prop].video }}
+					    		<p class="ds-hide-lg ds-text-small"> <a href="{{= it.studio_locations[prop].video }}" target="_blank"><span class="ds-icon-size-default ds-icon-play ds-text-blue-6 ds-padding-right-0_5"></span><span>Digital Tour</span></a></p>
+					    		{{?}}
+					        </div>
+					        {{? it.studio_locations[prop].offerings.length < 1 }}
+					        	<div class="ds-col-md-8 ds-col-lg-4 ds-hide-xs ds-display-lg-inline-block"></div>
+					        {{??}}
+					        	{{ for (var num = 1; num < 5; num++) { }}
+					        		<div class="ds-col-md-2 ds-col-lg-1 ds-hide-xs ds-display-lg-inline-block">
+					        		{{? it.studio_locations[prop].offerings.indexOf(num) !== -1 }}
+					        		<span class="ds-heading-4 ds-icon-circle-fill ds-text-blue-7 ds-align-text-center ds-display-xs-block"></span>
+					        		{{?}}
+					        		</div>
+					        	{{ } }}
+					        {{?}}
+					        {{? it.studio_locations[prop].offerings.length > 0 }}
+					        	<div class="ds-col-xs-12 ds-hide-lg">
+						        	<p class="ds-text-small">
+						        	{{~ it.studio_locations[prop].offerings : thisOffer : index}}
+						        		{{= it.offerings[thisOffer]}}
+						        		{{? index != it.studio_locations[prop].offerings.length -1}}
+						        		,
+						        		{{?}}
+						        	{{~}}
+						        	</p>
+					        	</div>
+					        {{?}}
+					        <div class="ds-col-xs-12 ds-col-lg-2 ds-push-lg-1">
+					        	<p class="ds-text-small">{{? it.attendee_qty[it.studio_locations[prop].attendee_qty] != ''}}<span class="ds-hide-lg">Capacity: </span>{{?}}{{= it.attendee_qty[it.studio_locations[prop].attendee_qty] }}</p>
+					        </div>
+					    </div> <!-- END OF ROW -->
+					</div>
+				</div>
+			</li>
+		</ul> <!-- END OF ACCORDIAN -->
+		    {{ i++; }}
+		{{ } }}
+		<div class="ds-row ds-bg-neutral-1">
+			<div class="ds-col-10 ds-push-1 is_table_row is_noResults ds-hide ds-padding-top-2 ds-padding-bottom-2 ds-bg-neutral-1">Your current filter selection has no results</div>
+		</div>
+	</div>
+</div>
+<!-- SORTING TABLE -->

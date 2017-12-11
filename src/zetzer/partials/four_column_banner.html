@@ -1,0 +1,16 @@
+<!-- FOUR COLUMN BANNER -->
+<div class="ds-row ds-padding-top-3 ds-padding-bottom-3 ds-padding-left-2 ds-padding-right-2">
+	<div class="ds-col-12">
+	{{? it.header}}<h4 class="ds-heading-3 ds-align-text-left ds-align-text-md-center ds-padding-bottom-2">{{= it.header}}</h4>{{?}}	
+	</div>
+	<div class="ds-col-10 ds-push-1">
+		<div class="ds-row">
+			{{~ it.columns : column : index}}
+			<div class="ds-col-xs-6 ds-col-md-3">
+				<h5 class="ds-heading-3 ds-align-text-center"><span class="ds-font-weight-bold">{{= column.number}}</span><br>{{= column.text}}</h5>
+			</div>
+			{{~}}
+		</div>
+	</div>
+</div>
+<!-- FOUR COLUMN BANNER -->

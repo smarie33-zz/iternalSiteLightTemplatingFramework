@@ -1,0 +1,21 @@
+<!-- QUESTION AND ANSWER LAYOUT -->
+<div class="ds-row ds-padding-top-3 ds-margin-top-3">
+	<div class="ds-col-8 ds-offset-2">
+		{{~ it.qas : qa}}
+		<div class="ds-row ds-hide-xs ds-display-md-block">
+			<div class="ds-col-1 ds-offset-1 scip-bg-circle {{? it.circle_color}}ds-bg-{{= it.circle_color}}{{?}}"></div>
+		</div>
+		<div class="ds-row scip-bg-circle-infront">
+			<div class="ds-col-xs-10 ds-offset-xs-1 ds-col-md-1 ds-offset-md-1"><h1 class="ds-heading-1 {{? it.answer_color}}ds-text-{{= it.answer_color}}{{?}}">Q</h1></div>
+			<div class="ds-col-xs-10 ds-offset-xs-1 ds-offset-md-0 ds-col-md-10 ds-padding-top-1"><h3 class="ds-heading-3 {{? it.answer_color}}ds-text-{{= it.answer_color}}{{?}}">{{= qa.question}}</h3></div>
+			<div class="ds-col-xs-10 ds-offset-xs-1 ds-col-md-1 ds-offset-md-1"><h1 class="ds-heading-1 {{? it.question_color}}ds-text-{{= it.question_color}}{{?}}">A</h1></div>
+			<div class="ds-col-xs-10 ds-offset-xs-1 ds-offset-md-0 ds-col-md-10 ds-padding-top-1">
+				{{~ qa.answers : answer}}
+					<h3 class="ds-heading-3 ds-padding-bottom-3 {{? it.question_color}}ds-text-{{= it.question_color}}{{?}}">{{= answer}}</h3>
+				{{~}}
+			</div>
+		</div>
+		{{~}}
+	</div>
+</div>
+<!-- QUESTION AND ANSWER LAYOUT -->

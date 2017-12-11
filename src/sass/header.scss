@@ -1,0 +1,43 @@
+#ds-w3-injectable-nav, .ds-sticky-header{
+	position: fixed !important;
+}
+
+.ds-sticky-header{
+	z-index: 300;
+	width: 99%;
+
+	a{
+		text-transform: none;
+		&:visited{
+			color: #00598a;
+		}
+		&:hover{
+			text-decoration: none;
+		}
+		&:hover span + span, .ds-active + span{
+			display: block !important;
+			margin: auto;
+			padding-top: 3px;
+		}
+		span + span{
+			display: none !important;
+		}
+	}
+}
+
+// Override Masthead till the badge is fixed to break at medium, not small
+@media only screen and (max-width: 1158px) {
+	#ds-w3-injectable-nav {
+		position: fixed !important;
+		right: -26px !important;
+		bottom: 147px !important;
+		top: auto !important;
+		left: auto !important;
+		height: 70px;
+    	overflow: hidden;
+    	box-shadow: 25px 3px 6px #888888;
+    	svg{
+    		margin-top: -5px;
+    	}
+	}
+}

@@ -1,0 +1,72 @@
+
+<div class="header ds-bg-neutral-1 ds-border-bottom-neutral-4 ds-sticky-header">
+	<div class="ds-row ds-bg-neutral-1">
+		<!-- small screen overlay-open button -->
+		<div class="ds-col-xs-2 ds-hide-lg burger">
+			<button class="ds-button ds-flat ds-display-inline-block ds-margin-0 ds-padding-1" id="dropdown-demo-nav-overlay2-open">
+				<span class="ds-icon-menu ds-icon-size-default"></span>
+			</button>
+		</div>
+
+		<!-- small screen logo -->
+		<div class="ds-col-xs-8 ds-col-10 ds-hide-lg ds-align-text-center ds-margin-0">
+			<a class="ds-link-unstyled ds-heading-5 ds-padding-1 ds-margin-0 ds-display-inline-block ds-text-neutral-8" href="{{? it.sitepath != ''}}{{= it.sitepath}}{{??}}/{{?}}">
+				SCIP
+			</a>
+		</div>
+
+		<!-- large screen logo -->
+		<div class="ds-col-lg-4 ds-offset-lg-1 ds-hide ds-display-lg-inline-block logo ds-padding-top-1 ds-padding-bottom-1">
+			<a class="ds-link-unstyled ds-heading-5 ds-margin-0 ds-display-inline-block ds-text-neutral-8" href="{{= it.sitepath}}">
+				Strategy & Change Internal Practice
+			</a>
+		</div>
+
+		<div class="ds-col-lg-7 ds-align-text-right ds-hide ds-display-lg-block ds-float-right menu ds-padding-top-1 ds-padding-bottom-">
+			<a class="ds-label-small ds-display-sm-inline-block ds-margin-bottom-0 ds-text-neutral-8" href="{{= it.sitepath}}work">
+				<span class="ds-display-md-block">Work</span>
+				<span class="ds-display-md-block scip-underline ds-border-bottom-contextual-blue-3"></span>
+			</a>
+			<a class="ds-label-small ds-display-sm-inline-block ds-margin-left-2 ds-margin-bottom-0 ds-text-neutral-8" href="{{= it.sitepath}}faq">
+				<span class="ds-display-md-block">FAQ</span>
+				<span class="ds-display-md-block scip-underline ds-border-bottom-contextual-blue-3"></span>
+			</a>
+			<a class="ds-label-small ds-display-sm-inline-block ds-margin-left-2 ds-margin-bottom-0 ds-margin-right-3 ds-text-neutral-8" href="{{= it.sitepath}}contact-us">
+				<span class="ds-display-md-block">Contact Us</span>
+				<span class="ds-display-md-block scip-underline ds-border-bottom-contextual-blue-3"></span></a>
+		</div>
+	</div>
+
+
+	<!--  overlay -->
+	<div class="ds-overlay-fullscreen ds-bg-blue-1" id="dropdown-demo-nav-overlay2" aria-hidden="true" role="dialog">
+		<div class="ds-overlay-box ds-bg-blue-1" role="document">
+			<div class="ds-overlay-content">
+				<div class="ds-col-xs-8 ds-offset-xs-2 ds-align-text-center">
+					<a class="ds-link-unstyled ds-heading-4 ds-font-weight-medium ds-padding-top-1 ds-padding-bottom-1 ds-margin-0 ds-display-inline-block ds-text-neutral-8"
+					 href="/">
+						Strategy & Change Internal Practice
+					</a>
+				</div>
+				<ul class="ds-accordion-large ds-margin-bottom-2">
+					<li>
+						<div class="ds-col-xs-10 ds-offset-xs-1 ds-col-sm-10 ds-offset-sm-1 ds-col-md-6 ds-offset-md-3 ds-margin-top-1 ds-margin-bottom-1 ds-align-text-center">
+							<a class="ds-heading-5 ds-text-neutral-8" href="{{= it.sitepath}}work">Work</a>
+						</div>
+					</li>
+					<li>
+						<div class="ds-col-xs-10 ds-offset-xs-1 ds-col-sm-10 ds-offset-sm-1 ds-col-md-6 ds-offset-md-3 ds-margin-top-1 ds-margin-bottom-1 ds-align-text-center">
+							<a class="ds-heading-5 ds-text-neutral-8" href="{{= it.sitepath}}faq">FAQ</a>
+						</div>
+					</li>
+					<li>
+						<div class="ds-col-xs-10 ds-offset-xs-1 ds-col-sm-10 ds-offset-sm-1 ds-col-md-6 ds-offset-md-3 ds-margin-top-1 ds-margin-bottom-1 ds-align-text-center">
+							<a class="ds-heading-5 ds-text-neutral-8" href="{{= it.sitepath}}contact-us">Contact Us</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</div>

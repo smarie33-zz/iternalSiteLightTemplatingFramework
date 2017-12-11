@@ -1,0 +1,25 @@
+<!-- COLORED BLOCKS WITH TRIANGLES -->
+<div class="ds-row ds-margin-top-3 {{? it.bg_color}}ds-bg-{{= it.bg_color}}{{?}}">
+	{{var blockGroupIndex = 0;}}
+	{{~ it.block_groups: block_group}}
+	{{blockGroupIndex += 1;}}
+	<div class="ds-offset-1 ds-col-10">
+		<div class="ds-row">
+			{{~ block_group.blocks : block : index}}
+			<div class="{{? it.set_height_group_name}}ds-set-height-{{= it.set_height_group_name}}{{?}} {{? block.bg_color}}ds-bg-{{= block.bg_color}}{{?}} ds-col-4 ds-padding-left-0 ds-padding-right-0">
+				{{? block.link || block.overlay}}
+				<a href="{{? block.link}}{{= block.link}}{{??}}#{{?}}" class="scip-overlay-link" {{? block.overlay}}id="color_blocks_with_triangles_{{= blockGroupIndex}}-{{= index}}-open"{{?}}>
+				{{?}}
+					<div class="scip_box_triangle scip-triangle-{{= block.triangle}} ds-float-xs-right ds-margin-bottom-2"></div>
+					<div class="ds-cf-xs"></div>
+					<h2 class="ds-heading-xs-2 ds-heading-md-3 ds-heading-lg-2 ds-padding-top-1 ds-padding-left-2 ds-padding-bottom-2 {{? block.font_color}}ds-text-{{= block.font_color}}{{??}}ds-text-neutral-8{{?}}">{{= block.heading}}</h2>
+				{{? block.link || block.overlay}}
+				</a>
+				{{?}}
+			</div>
+			{{~}}
+		</div>
+	</div>
+	{{~}}
+</div>
+<!-- COLORED BLOCKS WITH TRIANGLES -->

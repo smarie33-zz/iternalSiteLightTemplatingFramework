@@ -1,0 +1,20 @@
+
+// Debug Mode - Displays Container Dimensions w/ light grey background
+@mixin debug {
+  &, * {
+    background: rgba(0, 0, 0, .1);
+  }
+}
+
+@mixin triangle($color, $opacity : 1){
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 116px 116px 0;
+	border-color: transparent $color transparent transparent;
+	opacity : $opacity;
+}
+
+@mixin contextual-bgs($color){
+	background-color: $color !important;
+}

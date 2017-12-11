@@ -1,0 +1,104 @@
+{ 
+	"template": "base.html", 
+	"rel_path": "",
+	"current_page": "Work",
+	"meta_description": "",
+	"title": "SCIP",
+	"shorttitle": "work",
+	"description" : "",
+	"modules": [
+		{
+			"name": "page-header",
+			"data": {
+				"bg_color" : "contextual-yellow-5",
+				"heading": "Case Studies"
+			}
+		},
+		{
+			"name" : "case-studies",
+			"data" : {
+				"navigation_bg_color" : "blue-2",
+				"case_study_bg_color" : "blue-1",
+				"case_studies" : [
+					{
+						"competency" : "xxx",
+						"anchor" : "#xxx",
+						"studies" :[
+							{
+								"heading" : "xxx",
+								"problem" : "xxx",
+								"approach" : "xxx",
+								"result" : "xxx"
+							},
+							{
+								"heading" : "xxx",
+								"problem" : "xxx",
+								"approach" : "xxx",
+								"result" : "xxx"
+							}
+						]
+					},
+					{
+						"competency" : "xxx",
+						"anchor" : "#xxx",
+						"studies" :[
+							{
+								"heading" : "xxx",
+								"problem" : "xxx",
+								"approach" : "xxx",
+								"result" : "xxx"
+							}
+						]
+					},
+					{
+						"competency" : "xxx",
+						"anchor" : "#xxx",
+						"studies" :[
+							{
+								"heading" : "xxx",
+								"problem" : "xxx",
+								"approach" : "xxx",
+								"result" : "xxx"
+							}
+						]
+					},
+					{
+						"competency" : "xxx",
+						"anchor" : "#xxx",
+						"studies": [
+							{
+								"heading" : "xxx",
+								"problem" : "xxx",
+								"approach" : "xxx",
+								"result" : "xxx"
+							}
+						]
+					},
+					{
+						"competency" : "xxx",
+						"anchor" : "#xxx",
+						"studies" :[
+							{
+								"heading" : "xxx",
+								"problem" : "xxx",
+								"approach" : "xxx",
+								"result" : "xxx"
+							}
+						]
+					},
+					{
+						"competency" : "xxx",
+						"studies" :[
+							{
+								"heading" : "xxx",
+								"problem" : "xxx",
+								"approach" : "xxx",
+								"result" : "xxx"
+							}
+						]
+					}
+				]
+			}
+		}
+	]
+}

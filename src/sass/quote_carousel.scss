@@ -1,0 +1,13 @@
+.ds-carousel{
+	box-shadow: none;
+}
+
+.ds-carousel-arrow{
+	@media (min-width: 48.6875em){
+		z-index: 90;
+	}
+}
+
+.ds-carousel-arrow{
+	background-color: transparent;
+}

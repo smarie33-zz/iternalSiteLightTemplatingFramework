@@ -1,0 +1,36 @@
+<!-- TWO COLUMNS WITH HEADERS AND A LISTS -->
+<div class="ds-row ds-padding-top-3 {{? it.bg_color}}ds-bg-{{= it.bg_color}}{{?}}">
+	<div class="ds-col-xs-10 ds-push-xs-1 ds-col-md-8 ds-push-md-2">
+		<div class="ds-row">
+			{{? it.top_header}}<div class="ds-col-12"><h2 class="ds-heading-2 ds-align-text-center ds-margin-top-0 ds-margin-bottom-2">{{= it.top_header}}</h2></div>{{?}}
+		</div>
+		{{~ it.columns : column : index}}
+		{{? index%2 === 0}}
+		<div class="ds-row">
+		{{?}}
+			<div class="ds-col-6">
+				<h1 class="ds-heading-2 ds-heading-lg-1 ds-hide-xs ds-display-md-inline-block">
+					{{var countLarge = 0;}}
+					{{~ column.heading : header}}
+						{{= header}}
+						{{? countLarge == 0}}<br />{{?}}
+						{{countLarge += 1;}}
+					{{~}}
+				</h1>
+				<h3 class="ds-heading-3 ds-hide-md">
+					{{var countSmall = 0;}}
+					{{~ column.heading : header}}
+						{{= header}}
+						{{? countSmall == 0}} {{?}}
+						{{countSmall += 1;}}
+					{{~}}
+				</h3>
+				<p class="ds-padding-bottom-2">{{= column.blurb}}</p>
+			</div>
+		{{? index%2 === 1}}
+		</div>
+		{{?}}
+		{{~}}
+	</div>
+</div>
+<!-- TWO COLUMNS WITH HEADERS AND A LISTS -->

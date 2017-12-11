@@ -1,0 +1,82 @@
+@mixin color-class($color-class-prefix, $color-properties...) {
+
+	@each $category-name in map-keys($colors) {
+
+		$category-list: map-get($colors, $category-name);
+
+		@each $color in $category-list {
+			$index: index($category-list, $color);
+
+			.#{$color-class-prefix}-#{$category-name}-#{$index} {
+				@each $property in $color-properties {
+					@include triangle($color);
+				}
+
+				@content;
+			}
+		}
+	}
+}
+
+@mixin contextual-color-class($color-class-prefix, $color-properties...) {
+
+	@each $category-name in map-keys($contextual-colors) {
+
+		$category-list: map-get($contextual-colors, $category-name);
+
+		@each $color in $category-list {
+			$index: index($category-list, $color);
+
+			.#{$color-class-prefix}-#{$category-name}-#{$index} {
+				@each $property in $color-properties {
+					@include triangle($color);
+				}
+
+				@content;
+			}
+		}
+	}
+}
+
+// make contextual background color important so that they show up when elements have default bg colors
+@mixin contextual-color-bg-class($color-class-prefix, $color-properties...) {
+
+	@each $category-name in map-keys($contextual-colors) {
+
+		$category-list: map-get($contextual-colors, $category-name);
+
+		@each $color in $category-list {
+			$index: index($category-list, $color);
+
+			.#{$color-class-prefix}-#{$category-name}-#{$index} {
+				@each $property in $color-properties {
+					@include contextual-bgs($color);
+				}
+
+				@content;
+			}
+		}
+	}
+}
+
+@include color-class('scip-triangle', 'color');
+@include contextual-color-class('scip-triangle-contextual', 'color');
+@include contextual-color-bg-class('ds-bg-contextual', 'color');
+
+.scip-triangle-tinted{
+	@include triangle(#ffffff, .6);
+}
+
+.scip-overlay-link{
+	&:hover{
+		text-decoration: none !important;
+	}
+}
+
+button.ds-button.ds-text-neutral-1, button.ds-button.ds-text-neutral-8{
+	&:hover{
+		border-color: #012A41 !important;
+		color: #012A41 !important;
+		background-color: #fdfdfd;
+	}
+}

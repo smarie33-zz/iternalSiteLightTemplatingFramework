@@ -1,0 +1,48 @@
+{
+  "name": "SCIP",
+  "version": "1.0.0",
+  "description": "",
+  "license": "UNLICENSED",
+  "private": "true",
+  "main": "index.html",
+  "scripts": {
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "VSA Partners",
+  "devDependencies": {
+    "autoprefixer": "^6.6.1",
+    "browser-sync": "^2.18.6",
+    "gulp": "^3.9.1",
+    "gulp-changed": "^2.0.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-copy": "^1.0.0",
+    "gulp-header": "^1.8.8",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-postcss": "^6.3.0",
+    "gulp-remarkable": "^1.1.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^1.x",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.9",
+    "gulp-zetzer": "^1.0.4",
+    "jshint": "^2.9.3",
+    "jshint-stylish": "^2.2.0",
+    "pump": "^1.0.2",
+    "run-sequence": "^1.2.2"
+  },
+  "browserlist": [
+    "last 2 versions",
+    "ie 9"
+  ],
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}

@@ -1,0 +1,25 @@
+<!-- QUOTE CAROUSEL -->
+<div class="ds-row ds-padding-top-3 ds-padding-bottom-3 {{? it.bg_color}}ds-bg-{{= it.bg_color}}{{?}}">
+	<div class="ds-col-xs-12 ds-col-md-10 ds-offset-md-1 ds-padding-top-3 ds-padding-bottom-3 ds-margin-top-3 ds-margin-bottom-3">
+		<div class="ds-carousel ds-infinite">
+			<div class="ds-carousel-items">
+				{{~ it.quotes : quote}}
+		    	<div>
+		        	<div class="ds-blockquote ds-col-xs-10 ds-offset-xs-1">
+		            	<h3 class="ds-heading-3 ds-align-text-center ds-padding-top-1">
+		            	<span>" </span> {{= quote.blurb}} <span> "</span>
+		            	</h3>
+		            	{{? quote.attribute}}
+		            	<p class="ds-padding-top-2 ds-align-text-center ds-text-small">
+		            	{{= quote.attribute}}
+		            	</p>
+		            	{{?}}
+		        	</div>
+		    	</div>
+		    	{{~}}
+		  	</div>
+		</div>
+	</div>
+</div>
+
+<!-- QUOTE CAROUSEL -->

@@ -1,0 +1,60 @@
+<!-- CASE STUDIES -->
+<div class="ds-row scip-case-studies">
+	<div class="{{? it.case_study_bg_color}}ds-bg-{{= it.case_study_bg_color}}{{?}}">
+		<div class="ds-offset-xs-1 ds-margin-top-2 ds-col-xs-10 ds-hide-md">
+			<div class="ds-dropdown ds-basic ds-secondary" tabindex="0" role="menu" aria-label="Case Study Dropdown">
+			    <div class="ds-title ds-padding-left-0 {{? it.case_study_bg_color}}ds-bg-{{= it.case_study_bg_color}}{{?}}">Select Case Study</div>
+			    <div class="ds-options" role="group">
+			        {{~ it.case_studies : case_study : index}}
+				    <div class="ds-option" data-cs="{{= case_study.anchor}}"  role="menuitem">
+				    	{{= case_study.competency}}
+				    </div>
+				    {{~}}
+			    </div>
+			</div>
+		</div>
+	</div>
+	<div class="ds-set-height-navigation ds-col-md-3 ds-col-lg-2 ds-hide-xs ds-display-md-inline-block ds-no-gutter ds-side-nav ds-side-nav-mobile-drawer {{? it.navigation_bg_color}}ds-bg-{{= it.navigation_bg_color}}{{?}}  {{? it.case_study_bg_color}}ds-border-right-{{= it.case_study_bg_color}}{{?}}" style="position:relative!important;">
+		{{~ it.case_studies : case_study : index}}
+	    <div class="ds-nav-item {{? index == 0}}ds-active{{?}}" data-cs="{{= case_study.anchor}}"><a href="{{= case_study.anchor}}">{{= case_study.competency}}</a></div>
+	    {{~}}
+	</div>
+	<div class="ds-set-height-navigation ds-col-md-9 ds-col-lg-10 {{? it.case_study_bg_color}}ds-border-{{= it.case_study_bg_color}}{{?}} {{? it.case_study_bg_color}}ds-bg-{{= it.case_study_bg_color}}{{?}}">
+		{{var caseStudyHolderAmt = 0;}}
+		{{~ it.case_studies : case_study}}
+			{{var caseStudyAmt = 0;}}
+			{{~ case_study.studies : study}}
+				{{caseStudyAmt += 1;}}
+			{{~}}
+		<div class="scip-case-study {{= case_study.anchor}}{{? caseStudyHolderAmt > 0}} ds-hide{{?}}">
+			{{~ case_study.studies : study : index}}
+			<div class="ds-row ds-padding-top-3 {{?caseStudyAmt > 1 && index != caseStudyAmt - 1}} ds-margin-bottom-3{{?}}">
+			 	<div class="ds-col-xs-10 ds-push-xs-1">
+		 			<div class="ds-row {{?caseStudyAmt > 1 && index != caseStudyAmt - 1}}ds-border-bottom-neutral-8 ds-padding-bottom-3 {{?}}">
+		 				<div class="ds-col-12">
+		 					<div class="ds-row">
+		 						<div class="ds-col-6">
+		 							<h2 class="ds-heading-2 ds-padding-top-1 ds-padding-bottom-3">{{= study.heading}}</h2>
+		 						</div>
+		 					</div>
+		 				</div>
+		 				<div class="ds-col-6">
+			 				<p class="ds-font-weight-bold">Problem</p>
+			 				<h3 class="ds-heading-3">{{= study.problem}}</h3>
+		 				</div>
+		 				<div class="ds-col-6{{?caseStudyAmt > 1 && index != caseStudyAmt - 1}} ds-padding-bottom-3 {{?}}">
+			 				<p class="ds-font-weight-bold">Approach</p>
+			 				<p class="ds-margin-top-0 ds-margin-bottom-2">{{= study.approach}}</p>
+			 				<p class="ds-font-weight-bold">Result</p>
+			 				<p class="ds-margin-top-0 ds-margin-bottom-2">{{= study.result}}</p>
+		 				</div>
+		 			</div>
+			 	</div>
+			 </div>
+			{{~}}
+		</div>
+			{{caseStudyHolderAmt += 1;}}
+		{{~}}	
+	</div>
+</div>
+<!-- CASE STUDIES -->

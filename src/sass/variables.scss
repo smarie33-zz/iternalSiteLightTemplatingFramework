@@ -1,0 +1,32 @@
+// Animations
+$animation-duration: 1s;
+$animation-delay: 0.3s;
+
+$white: #fff;
+$black: #000;
+
+
+// Grabbing colors from w3ds repo so can use in triangles
+$colors: (
+	'blue':         ( #edf3f7, #c9dce6, #9cbdd1, #6399b8, #367aa3, #00598a, #004065, #002236 ),
+	'neutral':      ( #fdfdfd, #f3f3f3, #e2e2e2, #d1d1d1, #ababab, #757575, #555,    #232323 ),
+	'neutral-warm': ( #fcfcfa, #f1f0ee, #e4e3e1, #d4d3d0, #b0ada8, #7d7971, #5b5852, #242321 ),
+	'neutral-cool': ( #fcfcfe, #eff1f1, #e1e3e5, #d0d4d6, #a9afb4, #727c84, #535b60, #1f2325 )
+);
+
+@function get-color($category, $num) {
+	@return nth(map-get($colors, $category), $num + 1);
+}
+
+//               0        1        2        3        4        5
+$contextual-colors: (
+	'blue':   ( #eaf4fa, #b7e2fb, #24afff, #038ad8, #0370b0, #012a41 ),
+	'green':  ( #ceede3, #59c9a2, #27aa7c, #098b5d, #066544, #054830 ),
+	'yellow': ( #fdf0bf, #fbe798, #f9dc66, #f7cf2b, #e3b602, #cc9e05 ),
+	'red':    ( #fcd6d4, #f7685e, #dd2113, #af1a0f, #940a00, #590d08 ),
+	'purple': ( #f0e0fa, #debcf5, #b76de9, #9d37e1, #781bb6, #4f1278 )
+);
+
+@function get-contextual-color($category, $num) {
+	@return nth(map-get($contextual-colors, $category), $num + 1);
+}
