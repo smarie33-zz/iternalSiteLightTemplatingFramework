@@ -1,4 +1,4 @@
-# IBM-Studios
+# Internal Marketing Site
 
 To Install: 
 
@@ -16,3 +16,4 @@ To Install:
 ## FEATURES
 
 - zetzer
+- sass customization of design framework for relevant elements
